@@ -16,12 +16,11 @@ use Spryker\Zed\EventBehavior\Dependency\Plugin\EventResourceBulkRepositoryPlugi
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
 /**
- * @method \Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageRepositoryInterface getRepository()
  * @method \Spryker\Zed\ConfigurableBundleStorage\Business\ConfigurableBundleStorageFacadeInterface getFacade()
  * @method \Spryker\Zed\ConfigurableBundleStorage\Communication\ConfigurableBundleStorageCommunicationFactory getFactory()
  * @method \Spryker\Zed\ConfigurableBundleStorage\ConfigurableBundleStorageConfig getConfig()
  */
-class ConfigurableBundleTemplateEventResourceBulkRepositoryPlugin extends AbstractPlugin implements EventResourceBulkRepositoryPluginInterface
+class ConfigurableBundleTemplateImageEventResourceBulkRepositoryPlugin extends AbstractPlugin implements EventResourceBulkRepositoryPluginInterface
 {
     /**
      * {@inheritDoc}
@@ -32,7 +31,7 @@ class ConfigurableBundleTemplateEventResourceBulkRepositoryPlugin extends Abstra
      */
     public function getResourceName(): string
     {
-        return ConfigurableBundleStorageConfig::CONFIGURABLE_BUNDLE_TEMPLATE_RESOURCE_NAME;
+        return ConfigurableBundleStorageConfig::CONFIGURABLE_BUNDLE_TEMPLATE_IMAGE_RESOURCE_NAME;
     }
 
     /**
@@ -65,7 +64,7 @@ class ConfigurableBundleTemplateEventResourceBulkRepositoryPlugin extends Abstra
      */
     public function getEventName(): string
     {
-        return ConfigurableBundleEvents::CONFIGURABLE_BUNDLE_TEMPLATE_PUBLISH;
+        return ConfigurableBundleEvents::CONFIGURABLE_BUNDLE_TEMPLATE_IMAGE_PUBLISH;
     }
 
     /**

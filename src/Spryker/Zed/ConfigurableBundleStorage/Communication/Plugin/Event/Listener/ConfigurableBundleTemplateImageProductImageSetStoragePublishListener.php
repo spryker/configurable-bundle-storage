@@ -7,7 +7,7 @@
 
 namespace Spryker\Zed\ConfigurableBundleStorage\Communication\Plugin\Event\Listener;
 
-use Orm\Zed\ConfigurableBundle\Persistence\Map\SpyConfigurableBundleTemplateSlotTableMap;
+use Orm\Zed\ProductImage\Persistence\Map\SpyProductImageSetTableMap;
 use Spryker\Zed\Event\Dependency\Plugin\EventBulkHandlerInterface;
 use Spryker\Zed\Kernel\Communication\AbstractPlugin;
 
@@ -16,11 +16,11 @@ use Spryker\Zed\Kernel\Communication\AbstractPlugin;
  * @method \Spryker\Zed\ConfigurableBundleStorage\Communication\ConfigurableBundleStorageCommunicationFactory getFactory()
  * @method \Spryker\Zed\ConfigurableBundleStorage\ConfigurableBundleStorageConfig getConfig()
  */
-class ConfigurableBundleTemplateSlotStoragePublishListener extends AbstractPlugin implements EventBulkHandlerInterface
+class ConfigurableBundleTemplateImageProductImageSetStoragePublishListener extends AbstractPlugin implements EventBulkHandlerInterface
 {
     /**
      * {@inheritDoc}
-     * - Publishes slot's active configurable bundle template changes to Store.
+     * - Publishes configurable bundle template images to Storage.
      *
      * @api
      *
@@ -33,8 +33,8 @@ class ConfigurableBundleTemplateSlotStoragePublishListener extends AbstractPlugi
     {
         $configurableBundleTemplateIds = $this->getFactory()
             ->getEventBehaviorFacade()
-            ->getEventTransferForeignKeys($eventTransfers, SpyConfigurableBundleTemplateSlotTableMap::COL_FK_CONFIGURABLE_BUNDLE_TEMPLATE);
+            ->getEventTransferForeignKeys($eventTransfers, SpyProductImageSetTableMap::COL_FK_RESOURCE_CONFIGURABLE_BUNDLE_TEMPLATE);
 
-        $this->getFacade()->publishConfigurableBundleTemplate($configurableBundleTemplateIds);
+        $this->getFacade()->publishConfigurableBundleTemplateImage($configurableBundleTemplateIds);
     }
 }

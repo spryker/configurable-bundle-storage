@@ -10,7 +10,7 @@ namespace Spryker\Zed\ConfigurableBundleStorage\Business\Unpublisher;
 use Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageEntityManagerInterface;
 use Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageRepositoryInterface;
 
-class ConfigurableBundleStorageUnpublisher implements ConfigurableBundleStorageUnpublisherInterface
+class ConfigurableBundleTemplateImageStorageUnpublisher implements ConfigurableBundleTemplateImageStorageUnpublisherInterface
 {
     /**
      * @var \Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageRepositoryInterface
@@ -39,7 +39,7 @@ class ConfigurableBundleStorageUnpublisher implements ConfigurableBundleStorageU
      *
      * @return void
      */
-    public function unpublishConfigurableBundleTemplates(array $configurableBundleTemplateIds): void
+    public function unpublish(array $configurableBundleTemplateIds): void
     {
         $configurableBundleTemplateIds = array_unique(array_filter($configurableBundleTemplateIds));
 
@@ -47,10 +47,22 @@ class ConfigurableBundleStorageUnpublisher implements ConfigurableBundleStorageU
             return;
         }
 
-        $configurableBundleTemplateStorageEntityMap = $this->configurableBundleStorageRepository->getConfigurableBundleTemplateStorageEntityMap($configurableBundleTemplateIds);
+        $configurableBundleTemplateImageStorageEntityMap = $this->configurableBundleStorageRepository->getConfigurableBundleTemplateImageStorageEntityMap($configurableBundleTemplateIds);
 
-        foreach ($configurableBundleTemplateStorageEntityMap as $configurableBundleTemplateStorageEntity) {
-            $this->configurableBundleStorageEntityManager->deleteConfigurableBundleTemplateStorageEntity($configurableBundleTemplateStorageEntity);
+        foreach ($configurableBundleTemplateImageStorageEntityMap as $configurableBundleTemplateImageStorageEntities) {
+            $this->deleteConfigurableBundleTemplateImageStorageEntities($configurableBundleTemplateImageStorageEntities);
+        }
+    }
+
+    /**
+     * @param \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateImageStorage[] $configurableBundleTemplateImageStorageEntities
+     *
+     * @return void
+     */
+    protected function deleteConfigurableBundleTemplateImageStorageEntities(array $configurableBundleTemplateImageStorageEntities): void
+    {
+        foreach ($configurableBundleTemplateImageStorageEntities as $configurableBundleTemplateImageStorageEntity) {
+            $this->configurableBundleStorageEntityManager->deleteConfigurableBundleTemplateImageStorageEntity($configurableBundleTemplateImageStorageEntity);
         }
     }
 }
