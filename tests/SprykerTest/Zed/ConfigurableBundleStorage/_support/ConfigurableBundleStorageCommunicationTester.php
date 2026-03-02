@@ -63,9 +63,6 @@ class ConfigurableBundleStorageCommunicationTester extends Actor
         return $this->haveConfigurableBundleTemplate(array_merge($data, $defaultData));
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateTransfer
-     */
     public function createDeactivatedConfigurableBundleTemplate(): ConfigurableBundleTemplateTransfer
     {
         return $this->haveConfigurableBundleTemplate([
@@ -102,11 +99,6 @@ class ConfigurableBundleStorageCommunicationTester extends Actor
         return $configurableBundleTemplateTranslationTransfers;
     }
 
-    /**
-     * @param int $idConfigurableBundleTemplateStorage
-     *
-     * @return \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateStorage|null
-     */
     public function findConfigurableBundleTemplateStorageById(int $idConfigurableBundleTemplateStorage): ?SpyConfigurableBundleTemplateStorage
     {
         return SpyConfigurableBundleTemplateStorageQuery::create()
@@ -114,11 +106,6 @@ class ConfigurableBundleStorageCommunicationTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @param int $idConfigurableBundleTemplateStorage
-     *
-     * @return \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateImageStorage|null
-     */
     public function findConfigurableBundleTemplateImageStorageById(int $idConfigurableBundleTemplateStorage): ?SpyConfigurableBundleTemplateImageStorage
     {
         return SpyConfigurableBundleTemplateImageStorageQuery::create()
@@ -126,9 +113,6 @@ class ConfigurableBundleStorageCommunicationTester extends Actor
             ->findOne();
     }
 
-    /**
-     * @return \Spryker\Client\StoreExtension\Dependency\Plugin\StoreExpanderPluginInterface
-     */
     protected function createStoreStorageStoreExpanderPluginMock(): StoreExpanderPluginInterface
     {
         $storeTransfer = (new StoreTransfer())

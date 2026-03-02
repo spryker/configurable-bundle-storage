@@ -14,20 +14,10 @@ use Generated\Shared\Transfer\ConfigurableBundleTemplateSlotFilterTransfer;
 
 interface ConfigurableBundleStorageToConfigurableBundleFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ConfigurableBundleTemplateFilterTransfer $configurableBundleTemplateFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateCollectionTransfer
-     */
     public function getConfigurableBundleTemplateCollection(
         ConfigurableBundleTemplateFilterTransfer $configurableBundleTemplateFilterTransfer
     ): ConfigurableBundleTemplateCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfigurableBundleTemplateSlotFilterTransfer $configurableBundleTemplateSlotFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateSlotCollectionTransfer
-     */
     public function getConfigurableBundleTemplateSlotCollection(
         ConfigurableBundleTemplateSlotFilterTransfer $configurableBundleTemplateSlotFilterTransfer
     ): ConfigurableBundleTemplateSlotCollectionTransfer;

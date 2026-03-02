@@ -19,9 +19,6 @@ class ConfigurableBundleReader implements ConfigurableBundleReaderInterface
      */
     protected $configurableBundleFacade;
 
-    /**
-     * @param \Spryker\Zed\ConfigurableBundleStorage\Dependency\Facade\ConfigurableBundleStorageToConfigurableBundleFacadeInterface $configurableBundleFacade
-     */
     public function __construct(ConfigurableBundleStorageToConfigurableBundleFacadeInterface $configurableBundleFacade)
     {
         $this->configurableBundleFacade = $configurableBundleFacade;

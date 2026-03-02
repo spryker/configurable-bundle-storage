@@ -44,12 +44,6 @@ class ConfigurableBundleStoragePublisher implements ConfigurableBundleStoragePub
      */
     protected $configurableBundleStorageConfig;
 
-    /**
-     * @param \Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageRepositoryInterface $configurableBundleStorageRepository
-     * @param \Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageEntityManagerInterface $configurableBundleStorageEntityManager
-     * @param \Spryker\Zed\ConfigurableBundleStorage\Business\Reader\ConfigurableBundleReaderInterface $configurableBundleReader
-     * @param \Spryker\Zed\ConfigurableBundleStorage\ConfigurableBundleStorageConfig $configurableBundleStorageConfig
-     */
     public function __construct(
         ConfigurableBundleStorageRepositoryInterface $configurableBundleStorageRepository,
         ConfigurableBundleStorageEntityManagerInterface $configurableBundleStorageEntityManager,
@@ -102,12 +96,6 @@ class ConfigurableBundleStoragePublisher implements ConfigurableBundleStoragePub
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfigurableBundleTemplateTransfer $configurableBundleTemplateTransfer
-     * @param \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateStorage $configurableBundleTemplateStorageEntity
-     *
-     * @return \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateStorage
-     */
     protected function mapConfigurableBundleTemplateTransferToConfigurableBundleTemplateStorageEntity(
         ConfigurableBundleTemplateTransfer $configurableBundleTemplateTransfer,
         SpyConfigurableBundleTemplateStorage $configurableBundleTemplateStorageEntity

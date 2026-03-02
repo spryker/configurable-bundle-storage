@@ -53,12 +53,6 @@ class ConfigurableBundleStorageReader implements ConfigurableBundleStorageReader
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Client\ConfigurableBundleStorage\Dependency\Client\ConfigurableBundleStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ConfigurableBundleStorage\Dependency\Service\ConfigurableBundleStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\ConfigurableBundleStorage\Expander\ConfigurableBundleTemplateImageStorageExpanderInterface $configurableBundleTemplateImageStorageExpander
-     * @param \Spryker\Client\ConfigurableBundleStorage\Dependency\Service\ConfigurableBundleStorageToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         ConfigurableBundleStorageToStorageClientInterface $storageClient,
         ConfigurableBundleStorageToSynchronizationServiceInterface $synchronizationService,
@@ -71,23 +65,11 @@ class ConfigurableBundleStorageReader implements ConfigurableBundleStorageReader
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param int $idConfigurableBundleTemplate
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateStorageTransfer|null
-     */
     public function findConfigurableBundleTemplateStorage(int $idConfigurableBundleTemplate, string $localeName): ?ConfigurableBundleTemplateStorageTransfer
     {
         return $this->findStorageData((string)$idConfigurableBundleTemplate, $localeName);
     }
 
-    /**
-     * @param string $configurableBundleTemplateUuid
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateStorageTransfer|null
-     */
     public function findConfigurableBundleTemplateStorageByUuid(
         string $configurableBundleTemplateUuid,
         string $localeName
@@ -129,12 +111,6 @@ class ConfigurableBundleStorageReader implements ConfigurableBundleStorageReader
         );
     }
 
-    /**
-     * @param string $key
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateStorageTransfer|null
-     */
     protected function findStorageData(string $key, string $localeName): ?ConfigurableBundleTemplateStorageTransfer
     {
         $configurableBundleTemplateStorageTransferData = $this->storageClient->get(
@@ -163,11 +139,6 @@ class ConfigurableBundleStorageReader implements ConfigurableBundleStorageReader
             ->fromArray($configurableBundleTemplateStorageData, true);
     }
 
-    /**
-     * @param string $reference
-     *
-     * @return string
-     */
     protected function generateKey(string $reference): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

@@ -11,12 +11,6 @@ use Generated\Shared\Transfer\ConfigurableBundleTemplateImageStorageTransfer;
 
 interface ConfigurableBundleTemplateImageStorageReaderInterface
 {
-    /**
-     * @param int $idConfigurableBundleTemplate
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateImageStorageTransfer|null
-     */
     public function findConfigurableBundleTemplateImageStorage(
         int $idConfigurableBundleTemplate,
         string $localeName

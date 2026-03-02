@@ -112,12 +112,6 @@ class ConfigurableBundleTemplateImageSynchronizationDataBulkPlugin extends Abstr
         return $this->getFactory()->getConfig()->getConfigurableBundleTemplateSynchronizationPoolName();
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\FilterTransfer
-     */
     protected function createFilterTransfer(int $offset, int $limit): FilterTransfer
     {
         return (new FilterTransfer())

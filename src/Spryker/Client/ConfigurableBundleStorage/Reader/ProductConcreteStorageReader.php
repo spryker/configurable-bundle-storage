@@ -20,9 +20,6 @@ class ProductConcreteStorageReader implements ProductConcreteStorageReaderInterf
      */
     protected $productStorageClient;
 
-    /**
-     * @param \Spryker\Client\ConfigurableBundleStorage\Dependency\Client\ConfigurableBundleStorageToProductStorageClientInterface $productStorageClient
-     */
     public function __construct(ConfigurableBundleStorageToProductStorageClientInterface $productStorageClient)
     {
         $this->productStorageClient = $productStorageClient;
@@ -49,12 +46,6 @@ class ProductConcreteStorageReader implements ProductConcreteStorageReaderInterf
         return $productViewTransfers;
     }
 
-    /**
-     * @param string $sku
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ProductViewTransfer|null
-     */
     protected function findProductViewTransfer(string $sku, string $localeName): ?ProductViewTransfer
     {
         $productStorageConcreteData = $this->productStorageClient->findProductConcreteStorageDataByMapping(static::MAPPING_TYPE_SKU, $sku, $localeName);

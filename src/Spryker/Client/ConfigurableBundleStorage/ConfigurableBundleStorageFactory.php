@@ -23,9 +23,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class ConfigurableBundleStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Reader\ConfigurableBundleStorageReaderInterface
-     */
     public function createConfigurableBundleStorageReader(): ConfigurableBundleStorageReaderInterface
     {
         return new ConfigurableBundleStorageReader(
@@ -36,9 +33,6 @@ class ConfigurableBundleStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Reader\ConfigurableBundleTemplateImageStorageReaderInterface
-     */
     public function createConfigurableBundleTemplateImageStorageReader(): ConfigurableBundleTemplateImageStorageReaderInterface
     {
         return new ConfigurableBundleTemplateImageStorageReader(
@@ -48,9 +42,6 @@ class ConfigurableBundleStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Expander\ConfigurableBundleTemplateImageStorageExpanderInterface
-     */
     public function createConfigurableBundleTemplateImageStorageExpander(): ConfigurableBundleTemplateImageStorageExpanderInterface
     {
         return new ConfigurableBundleTemplateImageStorageExpander(
@@ -58,41 +49,26 @@ class ConfigurableBundleStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Reader\ProductConcreteStorageReaderInterface
-     */
     public function createProductConcreteStorageReader(): ProductConcreteStorageReaderInterface
     {
         return new ProductConcreteStorageReader($this->getProductStorageClient());
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Dependency\Client\ConfigurableBundleStorageToStorageClientInterface
-     */
     public function getStorageClient(): ConfigurableBundleStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Dependency\Client\ConfigurableBundleStorageToProductStorageClientInterface
-     */
     public function getProductStorageClient(): ConfigurableBundleStorageToProductStorageClientInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::CLIENT_PRODUCT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Dependency\Service\ConfigurableBundleStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): ConfigurableBundleStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\ConfigurableBundleStorage\Dependency\Service\ConfigurableBundleStorageToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): ConfigurableBundleStorageToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::SERVICE_UTIL_ENCODING);

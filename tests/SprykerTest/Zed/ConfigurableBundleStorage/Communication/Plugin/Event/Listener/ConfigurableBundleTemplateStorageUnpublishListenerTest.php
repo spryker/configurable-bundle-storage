@@ -39,9 +39,6 @@ class ConfigurableBundleTemplateStorageUnpublishListenerTest extends Unit
      */
     protected $configurableBundleStorageRepository;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -49,9 +46,6 @@ class ConfigurableBundleTemplateStorageUnpublishListenerTest extends Unit
         $this->configurableBundleStorageRepository = new ConfigurableBundleStorageRepository();
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateStorageUnpublishListenerCanBeUnpublished(): void
     {
         // Arrange

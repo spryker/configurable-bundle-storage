@@ -22,10 +22,6 @@ class ConfigurableBundleTemplateImageStorageUnpublisher implements ConfigurableB
      */
     protected $configurableBundleStorageEntityManager;
 
-    /**
-     * @param \Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageRepositoryInterface $configurableBundleStorageRepository
-     * @param \Spryker\Zed\ConfigurableBundleStorage\Persistence\ConfigurableBundleStorageEntityManagerInterface $configurableBundleStorageEntityManager
-     */
     public function __construct(
         ConfigurableBundleStorageRepositoryInterface $configurableBundleStorageRepository,
         ConfigurableBundleStorageEntityManagerInterface $configurableBundleStorageEntityManager

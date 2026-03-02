@@ -39,9 +39,6 @@ class ConfigurableBundleTemplateImageStoragePublishListenerTest extends Unit
      */
     protected $configurableBundleStorageRepository;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -49,9 +46,6 @@ class ConfigurableBundleTemplateImageStoragePublishListenerTest extends Unit
         $this->configurableBundleStorageRepository = new ConfigurableBundleStorageRepository();
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateImageStoragePublishListenerStoresDataForActiveTemplate(): void
     {
         // Arrange
@@ -82,9 +76,6 @@ class ConfigurableBundleTemplateImageStoragePublishListenerTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateImageStoragePublishListenerStoresDataForDeactivatedTemplate(): void
     {
         // Arrange
@@ -110,9 +101,6 @@ class ConfigurableBundleTemplateImageStoragePublishListenerTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateImageStoragePublishListenerStoresDataForTemplateWithoutImageSets(): void
     {
         // Arrange

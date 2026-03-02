@@ -18,17 +18,11 @@ use Spryker\Zed\Kernel\Persistence\AbstractPersistenceFactory;
  */
 class ConfigurableBundleStoragePersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateStorageQuery
-     */
     public function getConfigurableBundleTemplateStoragePropelQuery(): SpyConfigurableBundleTemplateStorageQuery
     {
         return SpyConfigurableBundleTemplateStorageQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateImageStorageQuery
-     */
     public function getConfigurableBundleTemplateImageStoragePropelQuery(): SpyConfigurableBundleTemplateImageStorageQuery
     {
         return SpyConfigurableBundleTemplateImageStorageQuery::create();

@@ -20,17 +20,11 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
  */
 class ConfigurableBundleStorageCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Dependency\Facade\ConfigurableBundleStorageToEventBehaviorFacadeInterface
-     */
     public function getEventBehaviorFacade(): ConfigurableBundleStorageToEventBehaviorFacadeInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Dependency\Facade\ConfigurableBundleStorageToConfigurableBundleFacadeInterface
-     */
     public function getConfigurableBundleFacade(): ConfigurableBundleStorageToConfigurableBundleFacadeInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::FACADE_CONFIGURABLE_BUNDLE);

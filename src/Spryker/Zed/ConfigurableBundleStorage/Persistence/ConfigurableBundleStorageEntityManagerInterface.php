@@ -12,34 +12,14 @@ use Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateS
 
 interface ConfigurableBundleStorageEntityManagerInterface
 {
-    /**
-     * @param \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateStorage $configurableBundleTemplateStorageEntity
-     *
-     * @return void
-     */
     public function saveConfigurableBundleTemplateStorageEntity(SpyConfigurableBundleTemplateStorage $configurableBundleTemplateStorageEntity): void;
 
-    /**
-     * @param \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateStorage $configurableBundleTemplateStorageEntity
-     *
-     * @return void
-     */
     public function deleteConfigurableBundleTemplateStorageEntity(SpyConfigurableBundleTemplateStorage $configurableBundleTemplateStorageEntity): void;
 
-    /**
-     * @param \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateImageStorage $configurableBundleTemplateImageStorageEntity
-     *
-     * @return void
-     */
     public function saveConfigurableBundleTemplateImageStorageEntity(
         SpyConfigurableBundleTemplateImageStorage $configurableBundleTemplateImageStorageEntity
     ): void;
 
-    /**
-     * @param \Orm\Zed\ConfigurableBundleStorage\Persistence\SpyConfigurableBundleTemplateImageStorage $configurableBundleTemplateImageStorageEntity
-     *
-     * @return void
-     */
     public function deleteConfigurableBundleTemplateImageStorageEntity(
         SpyConfigurableBundleTemplateImageStorage $configurableBundleTemplateImageStorageEntity
     ): void;

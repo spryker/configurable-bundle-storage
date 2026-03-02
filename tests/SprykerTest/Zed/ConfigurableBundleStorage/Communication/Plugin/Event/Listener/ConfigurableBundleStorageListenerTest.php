@@ -40,9 +40,6 @@ class ConfigurableBundleStorageListenerTest extends Unit
      */
     protected $configurableBundleStorageRepository;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -50,9 +47,6 @@ class ConfigurableBundleStorageListenerTest extends Unit
         $this->configurableBundleStorageRepository = new ConfigurableBundleStorageRepository();
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateStoragePublishListenerStoresDataForActiveTemplate(): void
     {
         // Arrange
@@ -74,9 +68,6 @@ class ConfigurableBundleStorageListenerTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateStoragePublishListenerStoresDataForDeactivatedTemplate(): void
     {
         // Arrange
@@ -98,9 +89,6 @@ class ConfigurableBundleStorageListenerTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testConfigurableBundleTemplateSlotStoragePublishListenerStoresData(): void
     {
         // Arrange

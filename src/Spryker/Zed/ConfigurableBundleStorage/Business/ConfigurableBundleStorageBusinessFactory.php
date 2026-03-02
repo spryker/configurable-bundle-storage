@@ -30,9 +30,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class ConfigurableBundleStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Business\Publisher\ConfigurableBundleStoragePublisherInterface
-     */
     public function createConfigurableBundleStoragePublisher(): ConfigurableBundleStoragePublisherInterface
     {
         return new ConfigurableBundleStoragePublisher(
@@ -43,9 +40,6 @@ class ConfigurableBundleStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Business\Unpublisher\ConfigurableBundleStorageUnpublisherInterface
-     */
     public function createConfigurableBundleStorageUnpublisher(): ConfigurableBundleStorageUnpublisherInterface
     {
         return new ConfigurableBundleStorageUnpublisher(
@@ -54,9 +48,6 @@ class ConfigurableBundleStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Business\Publisher\ConfigurableBundleTemplateImageStoragePublisherInterface
-     */
     public function createConfigurableBundleTemplateImageStoragePublisher(): ConfigurableBundleTemplateImageStoragePublisherInterface
     {
         return new ConfigurableBundleTemplateImageStoragePublisher(
@@ -69,9 +60,6 @@ class ConfigurableBundleStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Business\Unpublisher\ConfigurableBundleTemplateImageStorageUnpublisherInterface
-     */
     public function createConfigurableBundleTemplateImageStorageUnpublisher(): ConfigurableBundleTemplateImageStorageUnpublisherInterface
     {
         return new ConfigurableBundleTemplateImageStorageUnpublisher(
@@ -80,9 +68,6 @@ class ConfigurableBundleStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Business\Reader\ConfigurableBundleReaderInterface
-     */
     public function createConfigurableBundleReader(): ConfigurableBundleReaderInterface
     {
         return new ConfigurableBundleReader(
@@ -90,25 +75,16 @@ class ConfigurableBundleStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Dependency\Facade\ConfigurableBundleStorageToConfigurableBundleFacadeInterface
-     */
     public function getConfigurableBundleFacade(): ConfigurableBundleStorageToConfigurableBundleFacadeInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::FACADE_CONFIGURABLE_BUNDLE);
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Dependency\Facade\ConfigurableBundleStorageToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): ConfigurableBundleStorageToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::FACADE_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Zed\ConfigurableBundleStorage\Dependency\Facade\ConfigurableBundleStorageToProductImageFacadeInterface
-     */
     public function getProductImageFacade(): ConfigurableBundleStorageToProductImageFacadeInterface
     {
         return $this->getProvidedDependency(ConfigurableBundleStorageDependencyProvider::FACADE_PRODUCT_IMAGE);

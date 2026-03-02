@@ -17,20 +17,11 @@ class ConfigurableBundleTemplateImageStorageExpander implements ConfigurableBund
      */
     protected $configurableBundleTemplateImageStorageReader;
 
-    /**
-     * @param \Spryker\Client\ConfigurableBundleStorage\Reader\ConfigurableBundleTemplateImageStorageReaderInterface $configurableBundleTemplateImageStorageReader
-     */
     public function __construct(ConfigurableBundleTemplateImageStorageReaderInterface $configurableBundleTemplateImageStorageReader)
     {
         $this->configurableBundleTemplateImageStorageReader = $configurableBundleTemplateImageStorageReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConfigurableBundleTemplateStorageTransfer $configurableBundleTemplateStorageTransfer
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ConfigurableBundleTemplateStorageTransfer
-     */
     public function expandConfigurableBundleTemplateStorageWithImageSets(
         ConfigurableBundleTemplateStorageTransfer $configurableBundleTemplateStorageTransfer,
         string $localeName
