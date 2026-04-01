@@ -50,4 +50,14 @@ class ConfigurableBundleStorageConfig extends AbstractBundleConfig
      * @var string
      */
     public const CONFIGURABLE_BUNDLE_TEMPLATE_IMAGE_RESOURCE_NAME = 'configurable_bundle_template_image';
+
+    /**
+     * Specification:
+     * - Queue name used for configurable bundle publish events.
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const string PUBLISH_CONFIGURABLE_BUNDLE_QUEUE = 'publish.configurable_bundle';
 }
