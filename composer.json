@@ -23,6 +23,7 @@
         "spryker/customer": "*",
         "spryker/event": "*",
         "spryker/propel": "*",
+        "spryker/publisher": "*",
         "spryker/queue": "*",
         "spryker/rabbit-mq": "*",
         "spryker/store": "*",
@@ -34,7 +35,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Spryker\\": "src/Spryker/"
+            "Spryker\\": "src/Spryker/",
+            "SprykerTest\\Zed\\ConfigurableBundleStorage\\Helper\\": "tests/SprykerTest/Zed/ConfigurableBundleStorage/_support/Helper/"
         }
     },
     "autoload-dev": {
